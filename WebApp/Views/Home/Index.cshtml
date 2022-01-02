@@ -1,0 +1,22 @@
+﻿@addTagHelper *, Microsoft.FeatureManagement.AspNetCore
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<feature name="@FeatureFlags.FeatureA">
+    @FeatureFlags.FeatureA enabled!
+</feature>
+<hr />
+@{
+    if (ViewBag.FeatureB != null)
+    {
+        <div>
+            @ViewBag.FeatureB
+        </div>
+    }
+}
+<hr />
+
+<feature name="@FeatureFlags.FeatureD">
+    @FeatureFlags.FeatureD enabled, this will only be visible about 50% of the time
+</feature>
